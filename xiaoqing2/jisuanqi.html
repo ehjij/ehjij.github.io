@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>计算器的制作</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <style type="text/css">
+        p {
+            font-size: 40px;
+            text-align: left;
+            font-family: '隶书' ；
+        }
+
+        .number {
+            width: 50px;
+            height: 50px;
+            background-color: thistle;
+            margin-left: 5px;
+            margin-top: 5px;
+            padding-left: 5px;
+            font-size: 28px;
+            font-family: '隶书';
+            box-shadow: 2px 2px 2px blue;
+        }
+
+        .text {
+            margin-top: 15px;
+            height: 30px;
+            width: 240px;
+            margin-left: 10px;
+        }
+
+        input {
+            color: dodgerblue;
+        }
+
+        input:hover {
+            color: red;
+        }
+
+        #ys {
+            width: 115px;
+        }
+    </style>
+    <div class="wrap">
+        <header class="main-header">
+            <h1 class="logo">个人作品</h1>
+
+            <ul class="navlist">
+                <li><a href="../xiaoqing1/index.html">返回首页</a></li>
+                <li><a href="#jy">简易版计算器</a></li>
+                <li a href=""></li>
+            </ul>
+        </header>
+        <section class="banner">
+            <h2>制作的第一个简易版计算器</h2>
+            <h3>首先理好思路，大概需要哪些步骤实现他们</h3>
+            <h3>再简单的做个计算器的排版，输入数字符号等</h3>
+            <h3>用java script的知识进行函数的调用以及用eval返回值计算结果</h3>
+            <h3>最后可用css添加更多样式，检查和完善代码，在边学边做中，一定需要耐心</h3>
+            <h3>因为会出现各种错误或你对知识的不懂，需要你仔细检查和学习，这点我觉得很重要。</h3>
+        </section>
+        <section class="container">
+            <img src="images/t016ef4a9eef56b0ee8.png" style="width: 250px">
+            <div id="jy">
+                <p id=js>计算器</p>
+                <input class="text" id="result" onclick="result()" value=""><br/>
+                <input class="number" type="button" onclick="jsq(this.value)" value="7">
+                <input class="number" type="button" onclick="jsq(this.value)" value="8">
+                <input class="number" type="button" onclick="jsq(this.value)" value="9">
+                <input class="number" type="button" onclick="jsq(this.value)" value="*"><br/>
+                <input class="number" type="button" onclick="jsq(this.value)" value="4">
+                <input class="number" type="button" onclick="jsq(this.value)" value="5">
+                <input class="number" type="button" onclick="jsq(this.value)" value="6">
+                <input class="number" type="button" onclick="jsq(this.value)" value="-"><br/>
+                <input class="number" type="button" onclick="jsq(this.value)" value="1">
+                <input class="number" type="button" onclick="jsq(this.value)" value="2">
+                <input class="number" type="button" onclick="jsq(this.value)" value="3">
+                <input class="number" type="button" onclick="jsq(this.value)" value="+"><br/>
+                <input class="number" type="button" onclick="jsq(this.value)" value="0">
+                <input class="number" type="button" onclick="jsq(this.value)" value=".">
+                <input class="number" type="button" onclick="jsq(this.value)" value="/">
+                <input class="number" type="button" onclick="denhao()" value="="><br/>
+                <input class="number" id="ys" type="button" onclick="del()" value="c">
+                <input class="number" id="ys" type="button" onclick="jsq(this.value)" value="+/-">
+                <script type="text/javascript">
+                    function jsq(value) {
+                        document.getElementById("result").value += value;
+                    }
+
+                    function denhao() {
+                        alert("点击了等号");
+                        document.getElementById("result").value = eval(document.getElementById("result").value);
+                    }
+
+                    //用eval返回值计算结果
+                    function del() {
+                        alert("点击了删除");
+                        document.getElementById("result").value = "";
+                    }
+
+                    const js = document.getElementById('js')
+                    js.style.color = 'red';
+                </script>
+            </div>
+        </section>
+    </div>
+    <footer>彭小清&copy;2018</footer>
+</body>
+
+</html>
